@@ -502,6 +502,21 @@
 				pendo.initialize({});
 		})('f63de89f-c124-49b5-7b6a-d0c41dab1682');
 		</script>
-
+<script>
+	window.analytics = {};
+	function juneify(writeKey) {
+		window.analytics._writeKey = writeKey;
+		var script = document.createElement("script");
+		script.type = "application/javascript";
+		script.onload = function () {
+			window.analytics.page();
+		}
+		script.src = "https://unpkg.com/@june-so/analytics-next/dist/umd/standalone.js";
+		var first = document.getElementsByTagName('script')[0];
+		first.parentNode.insertBefore(script, first);
+	}
+	juneify("OxJZX7xk1Ji7uyoC");
+	window.analytics.track('clicks');
+  </script>
   </body>
   </html>
